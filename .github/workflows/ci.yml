@@ -18,7 +18,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
-
+    - name: Set env
+      run: echo "BUILD_DATE=$(($(date +%s)*1000))" >> $GITHUB_ENV
     - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:

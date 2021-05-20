@@ -11,7 +11,8 @@ const AppWithLD = withLDProvider({
     anonymous: true,
     custom: {
       'Build Version': BUILD_VERSION,
-      'Build Name': BUILD_NAME
+      'Build Name': BUILD_NAME,
+      'Build Date': process.env.BUILD_DATE
     }
   },
   options: { /* ... */ }
