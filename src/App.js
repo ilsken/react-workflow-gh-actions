@@ -3,12 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import { withLDConsumer } from 'launchdarkly-react-client-sdk';
 
-const ShinyNewFeature =  withLDConsumer(({flags}) => {
+const ShinyNewFeature =  withLDConsumer()(
+({flags}) => {
   if (flags.enableShinyNewFeature) {
     return (
-      <p>Hello, the shiny new feature is on</p>
+      <span>Hello, the shiny new feature is on</span>
     )
   }
+  return []
 })
 
 
@@ -16,9 +18,7 @@ const ShinyNewFeature =  withLDConsumer(({flags}) => {
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />       
-      </header>
+    <h1>My App</h1>
       <p>
         <ShinyNewFeature />
       </p>
