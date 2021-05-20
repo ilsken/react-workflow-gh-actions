@@ -26,14 +26,4 @@ function App() {
   );
 }
 
-export default withLDProvider({
-  clientSideID: process.env.LD_CLIENT_ID,
-  user: {
-    anonymous: true,
-    custom: {
-      'Build Version': BUILD_VERSION,
-      'Build Name': BUILD_NAME
-    }
-  },
-  options: { /* ... */ }
-})(App);
+export default App
