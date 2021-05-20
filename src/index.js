@@ -6,13 +6,13 @@ import { withLDProvider } from 'launchdarkly-react-client-sdk';
 const {version: BUILD_VERSION, name: BUILD_NAME} = require('../package.json')
 
 const AppWithLD = withLDProvider({
-  clientSideID: process.env.LD_CLIENT_ID,
+  clientSideID: process.env.REACT_APP_LD_CLIENT_ID,
   user: {
     anonymous: true,
     custom: {
       'Build Version': BUILD_VERSION,
       'Build Name': BUILD_NAME,
-      'Build Date': process.env.BUILD_DATE
+      'Build Date': process.env.REACT_APP_BUILD_DATE
     }
   },
   options: { /* ... */ }
