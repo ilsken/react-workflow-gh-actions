@@ -44,10 +44,10 @@ jobs:
 
     - name: Deploy
       run: |
+        export LD_CLIENT_ID=5dc455b378728b0983895ad3
         git config --global user.name "$GITHUB_ACTOR"
         git config --global user.email $user_email
         git remote set-url origin https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${repository}
-        npm run clean
         npm run deploy
       env:
         LD_CLIENT_ID: ${{ secrets.LD_CLIENT_ID }}
