@@ -48,6 +48,6 @@ jobs:
         npm run deploy
       env:
         user_email: 'github-actions[bot]@users.noreply.github.com'
-        GITHUB_ACTOR: ${{ secrets.GITHUB }}
+        GITHUB_ACTOR: ${{ github.actor }}
         GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
         repository: ${{ github.repository }}
