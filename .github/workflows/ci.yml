@@ -36,6 +36,8 @@ jobs:
 
     - name: Build
       run: npm run build
+      env:
+        LD_CLIENT_ID: ${{ secrets.LD_CLIENT_ID }}
 
     - name: Deploy
       run: |
