@@ -18,8 +18,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
     - name: Set env
       run: echo "BUILD_DATE=$(($(date +%s)*1000))" >> $GITHUB_ENV
+
     - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
       with:
@@ -48,6 +50,7 @@ jobs:
         npm run clean
         npm run deploy
       env:
+        LD_CLIENT_ID: ${{ secrets.LD_CLIENT_ID }}
         user_email: 'github-actions[bot]@users.noreply.github.com'
         GITHUB_ACTOR: ${{ github.actor }}
         GITHUB_TOKEN:  ${{ secrets.GITHUB_TOKEN }}
